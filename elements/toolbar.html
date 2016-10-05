@@ -1,0 +1,72 @@
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+<dom-module id="tool-bar">
+    <template id="tool-set">
+        <ul class="flex-wrap toolbar">
+            <li>
+                <iron-icon icon="icons:info" id="anchor-for-[[modalId]]" onclick="clickHandler(event)"></iron-icon>
+            </li>
+            <li>
+                <a href="https://plus.google.com/share?url=[[shareLink]]" target="_blank" ><iron-icon icon="social:share"></iron-icon></a>
+            </li>
+            <li><a href="[[repoLink]]" target="_blank"><i class="fa fa-2x fa-code-fork" aria-hidden=true></i></a></li>
+        </ul>
+        <paper-dialog id="[[modalId]]" modal>
+            <div class="text-right modal-close">
+                <iron-icon icon="icons:power-settings-new" dialog-dismiss></iron-icon>
+            </div>
+            <h2 class="text-center text-capitalize">[[title]]</h2>
+            <paper-dialog-scrollable>
+                <div class="container-fluid">
+                    <div class="row flex-wrap info">
+                        <content></content>
+                    </div>
+                </div>
+            </paper-dialog-scrollable>
+        </paper-dialog>
+    </template>
+    <script>
+    function clickHandler(e) {
+        var button = e.target;
+        while (!button.hasAttribute('data-dialog') && button !== document.body) {
+            button = button.parentElement;
+        }
+
+        if (!button.hasAttribute('data-dialog')) {
+            return;
+        }
+
+        var id = button.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+        if (dialog) {
+            dialog.open();
+        }
+    }
+    Polymer({
+        is: "tool-bar",
+        properties: {
+            repoLink:{
+                type:String,
+                value:"https://github.com/Nitin-Prabhakar"
+            },
+            shareLink: {
+                type: String,
+                value: "http://nitin-prabhakar.github.io/career-portfolio/"
+            },
+            title: {
+                type: String,
+                value: null
+            }
+        },
+        ready: function() {
+            console.log(this.modalId)
+            //console.log(document.getElementById("#anchor-for-"+this.modalId));
+            document.querySelector("#anchor-for-" + this.modalId).setAttribute('data-dialog', this.modalId);
+        }
+    })
+    </script>
+</dom-module>

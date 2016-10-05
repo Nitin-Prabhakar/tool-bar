@@ -1,0 +1,39 @@
+{
+  "name": "personal-portfolio",
+  "description": "build and customize your portfolio",
+  "main": "index.html",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "portfolio"
+  ],
+  "homepage": "https://github.com/Nitin-Prabhakar/career-portfolio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.6",
+    "paper-material": "PolymerElements/paper-material#^1.0.6",
+    "paper-card": "PolymerElements/paper-card#^1.1.1",
+    "google-youtube": "GoogleWebComponents/google-youtube#^1.2.1",
+    "font-awesome": "^4.6.3",
+    "font-awesome-animation": "^0.0.9",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.6",
+    "paper-input": "PolymerElements/paper-input#^1.1.11",
+    "paper-dialog": "PolymerElements/paper-dialog#^1.0.4",
+    "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#^1.1.4",
+    "iron-input": "PolymerElements/iron-input#^1.0.10",
+    "iron-label": "PolymerElements/iron-label#^1.0.2",
+    "google-hangout-button": "GoogleWebComponents/google-hangout-button#^1.0.1",
+    "google-map": "GoogleWebComponents/google-map#^1.1.10",
+    "polymer": "Polymer/polymer#^1.6.1",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.22"
+  },
+  "dependencies": {}
+}

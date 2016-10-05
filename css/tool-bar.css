@@ -1,0 +1,43 @@
+tool-bar .toolbar {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 0.5em 0 0 0;
+}
+.tool-bar h1,
+.tool-bar h2,
+.tool-bar h3,
+.tool-bar h4,
+.tool-bar h5 {
+    font-family: "Montserrat", arial, sans-serif;
+    margin: 0;
+}
+.tool-bar iron-icon:hover {
+    cursor: pointer;
+}
+.tool-bar .modal-desc {
+    -ms-flex-order: -1;
+    order: -1;
+}
+.tool-bar .modal-desc P {
+    font-family: "Quicksand", arial, sans-serif;
+    padding-top: 1.2em;
+    text-transform: capitalize;
+    font-size: 1.1em;
+    text-align: center;
+}
+.tool-bar .info {
+    padding-right: 1em;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+@media screen and (min-width: 767px) {
+    .tool-bar .modal-desc P {
+        padding-top: 0;
+        text-align: justify;
+        white-space: pre-line;
+    }
+    .tool-bar .modal-desc {
+        -ms-flex-order: 1;
+        order: 1;
+    }
+}

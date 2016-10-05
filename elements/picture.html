@@ -1,0 +1,62 @@
+<dom-module id="picture-fill">
+    <template>
+        <picture>
+            <template is="dom-repeat" id="sources" items="[[srcConf]]">
+                <template is="dom-if" restamp if="[[item.media]]">
+                    <source media="[[item.media]]" srcset="[[buildSrcPath(item.srcset,item.file)]]" sizes="[[item.sizes]]">
+                </template>
+                <template is="dom-if" restamp if="[[!item.media]]">
+                    <source srcset="[[buildSrcPath(item.srcset,item.file)]]" sizes="[[item.sizes]]">
+                </template>
+            </template><img class="img-responsive" src="[[fallbackSrc]]" alt="[[alt]]"></picture>
+    </template>
+    <script>
+    Polymer({
+        is: "picture-fill",
+        properties: {
+            base: {
+                type: String,
+                value: ""
+            },
+            ext: {
+                type: String,
+                value: "jpg"
+            },
+            alt: {
+                type: String,
+                value: "Image descriptor"
+            },
+            srcConf: {
+                type: Array,
+                value: []
+            },
+            fallbackSrc: {
+                type: String,
+                value: "addafallbackimage.jpg"
+            }
+        },
+        ready: function() {
+            for (var i = this.srcConf.length - 1; i >= 0; i--) {
+                if (!this.srcConf[i].sizes) {
+                    this.srcConf[i].sizes = "100vw"
+                }
+            }
+            //remove trailing slash if any and add it back
+            //else, the path would contain // instead of /
+            //regex borrowed from http://stackoverflow.com/questions/6680825/return-string-without-trailing-slash
+            this.base = this.base.replace(/\/$/, "") + "/";
+            //construct fallback
+            this.fallbackSrc = this.base + this.fallbackSrc + "." + this.ext;
+        },
+        buildSrcPath: function(a, f) {
+
+            var aPaths = [];
+            for (var i = a.length - 1; i >= 0; i--) {
+                var path = this.base + f + "-" + a[i] + "." + this.ext + " " + a[i] + "w"
+                aPaths[i] = path;
+            }
+            return aPaths.join();
+        }
+    });
+    </script>
+</dom-module>

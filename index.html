@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nitin Prabhakar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" type="image/png" href="favicon-custom.png">
+        <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower_components/font-awesome-animation/dist/font-awesome-animation.min.css">
+        <link rel="stylesheet" href="build/css/app.css">
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="elements/picture.html">
+        <link rel="import" href="elements/toolbar.html">
+        <link rel="import" href="bower_components/google-hangout-button/google-hangout-button.html">
+        <link rel="import" href="elements/polymer-logo.html">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    </head>
+    <body>
+        <main class="main">
+            <div class="container">
+                <section id="project-pipeline">
+                    <div class="row">
+                        <div class="flex-wrap project-list">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <article>
+                                    <div class="article-cover">
+                                        <figure>
+                                            <picture-fill base="build/images/" alt="project-health-tracker" src-conf='[ { "srcset":[480,640,800,960,1280,1600],"sizes":"(max-width:767px)100vw,(max-width:970px)50vw,33.3333vw","file":"calorie"} ]' fallback-src="calorie-480"></picture-fill>
+                                            <figcaption class="text-center text-uppercase">
+                                                <h3 class="project-header">de-cal</h3>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="article-tool-bar">
+                                        <tool-bar modal-id="project-health-tracker" title="health tracker">
+                                            <div class="col-xs-12 col-sm-7 col-md-8 modal-preview">
+                                                <picture-fill base="build/images/" alt="project-health-tracker" src-conf='[ { "srcset":[480,640,800,960,1280,1600],"sizes":"(max-width:767px) 100vw,70vw","file":"calorie"} ]' fallback-src="calorie-480"></picture-fill>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-5 col-md-4 modal-desc">
+                                                <p>A single page app that tracks the user's calorie intake, and optionally, other health-related metrics. Typing food names into the search field will display a list of matching foods as provided by a health API. Users will be able to select an item from the list, and the item will be added to the list of foods the user is tracking. The total calorie count will also update to reflect the new daily total.</p>
+                                            </div>
+                                        </tool-bar>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

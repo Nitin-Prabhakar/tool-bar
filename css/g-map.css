@@ -1,0 +1,29 @@
+google-map {
+    height: 100vmin;
+}
+.map-container {
+    position: relative;
+}
+.__directions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50%;
+}
+.__directions P {
+    position: relative;
+    color: #283c49;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+.__directions input {
+    border: 0;
+    padding: 0.46em;
+    max-width: 100%;
+    font-weight: 400;
+}
+.__directions iron-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
